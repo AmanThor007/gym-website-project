@@ -1,28 +1,28 @@
+<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Enquiry - Sai Jyot Fitness Club</title>
-  <link rel="stylesheet" href="enquiry.css" />
+  <meta charset="UTF-8">
+  <title>About Us - Sai Jyot Fitness Club</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="enquiry.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-        <img src="logo.jpeg" alt="Logo">
-        <span>Sai Jyot Fitness Club</span>
-      </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="trainers.html">Trainers</a></li>
-        <li><a href="plans.html">Plans</a></li>
-        <li><a href="enquiry.html" class="active">Enquiry</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Header -->
+ <div id="header"></div>
+
+<link rel="stylesheet" href="header.css" />
+
+<script>
+  // Load header.html into #header
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
 
   <section class="enquiry-section">
     <h1>Enquiry Form</h1>

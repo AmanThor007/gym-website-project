@@ -1,4 +1,4 @@
-body 
+/* Reset & base */
 * {
   margin: 0;
   padding: 0;
@@ -12,149 +12,114 @@ body {
   line-height: 1.6;
   scroll-behavior: smooth;
 }
+footer {
+  background-color: #000;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+}
+.plans-section {
+  max-width: 1200px;
+  margin: 160px auto 80px; /* space for fixed header */
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
 
-/* Header */
-header {
-  background-color: rgba(0, 0, 0, 0.85);
+.plans-section h1 {
+  color: yellow;
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 36px;
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Cards layout */
+.plan-cards {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  width: 100%; /* FIXED */
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(6px);
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-.logo img {
-  height: 200px; /* Adjusted for fixed header */
-  width: auto;
-  transition: transform 0.3s ease;
+/* Exactly 3 equal cards */
+.plan-card {
+  flex: 1 1 calc(33.33% - 30px); /* 3 per row */
+  max-width: 350px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid yellow;
+  border-radius: 12px;
+  padding: 25px;
+  transition: transform 0.3s;
 }
 
-.logo img:hover {
+.plan-card:hover {
   transform: scale(1.05);
 }
 
-/* Navigation */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 50px;
-}
-
-nav a {
-  color: #eeddddf1;
-  text-decoration: none;
+.plan-card h2 {
+  color: yellow;
   font-weight: 500;
+  margin-bottom: 20px;
   font-size: 22px;
-  text-transform: uppercase;
   font-family: 'Anton', sans-serif;
-  padding: 10px 12px;
-  border-radius: 5px;
-  letter-spacing: 0.5px;
-  transition: 0.3s;
 }
 
-nav a:hover,
-nav a.active {
+.plan-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.plan-card td {
+  padding: 10px 5px;
+  font-size: 16px;
+  border-bottom: 1px solid #555;
+  text-align: left;
+  color: #fff;
+}
+
+.plan-card td:last-child {
+  text-align: right;
+  color: #0f0;
+}
+
+.join-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
   background-color: yellow;
   color: black;
-  text-shadow: 0 0 8px #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
-  
-  .btn {
-    padding: 12px 24px;
-    background-color: yellow;
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  footer {
-    background-color: #000;
-    color: #ccc;
-    text-align: center;
-    padding: 20px;
-  }
-  .plans-section {
-    max-width: 1200px;
-    margin: 100px auto;
-    padding: 0 20px;
-    text-align: center;
-    color: white;
-  }
-  
-  .plans-section h1 {
-    color: yellow;
-    margin-bottom: 40px;
-    font-size: 36px;
-  }
-  
+
+.join-btn:hover {
+  background-color: #ffdd00;
+  color: #000;
+}
+
+@media (max-width: 768px) {
   .plan-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+    flex-direction: column;
+    align-items: center;
   }
-  
+}
+
+/* Responsive */
+@media (max-width: 900px) {
   .plan-card {
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid yellow;
-    border-radius: 10px;
-    padding: 25px;
-    width: 320px;
-    transition: transform 0.3s;
+    flex: 1 1 calc(50% - 30px); /* 2 per row */
   }
-  
-  .plan-card:hover {
-    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .plan-card {
+    flex: 1 1 100%; /* 1 per row */
   }
-  
-  .plan-card h2 {
-    color: yellow;
-    margin-bottom: 20px;
-  }
-  
-  .plan-card table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .plan-card td {
-    padding: 10px 5px;
-    font-size: 16px;
-    border-bottom: 1px solid #555;
-    text-align: left;
-    color: #fff;
-  }
-  
-  .plan-card td:last-child {
-    text-align: right;
-    color: #0f0;
-  }
-  
-  @media (max-width: 768px) {
-    .plan-cards {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  .join-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: yellow;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background 0.3s;
-  }
-  
-  .join-btn:hover {
-    background-color: #ffdd00;
-    color: #000;
-  }
-  
+}
+
+

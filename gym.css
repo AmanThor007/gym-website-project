@@ -13,56 +13,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Header */
-header {
-  background-color: rgba(0, 0, 0, 0.85);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  width: 100%; /* FIXED */
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(6px);
-}
-
-.logo img {
-  height: 200px; /* Adjusted for fixed header */
-  width: auto;
-  transition: transform 0.3s ease;
-}
-
-.logo img:hover {
-  transform: scale(1.05);
-}
-
-/* Navigation */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 50px;
-}
-
-nav a {
-  color: #eeddddf1;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 22px;
-  text-transform: uppercase;
-  font-family: 'Anton', sans-serif;
-  padding: 10px 12px;
-  border-radius: 5px;
-  letter-spacing: 0.5px;
-  transition: 0.3s;
-}
-
-nav a:hover,
-nav a.active {
-  background-color: yellow;
-  color: black;
-  text-shadow: 0 0 8px #ffd700;
-}
-
 /* Hero Section */
 .hero {
   position: relative;
@@ -105,11 +55,11 @@ nav a.active {
 .hero h2 {
   font-size: 40px;
   font-weight: 500;
-    font-family: 'Anton', sans-serif;
-    color: rgb(255, 255, 255);
-    margin-bottom: 1px;
-    animation: fadeSlideUp 1s ease forwards;
-    animation-delay: 0.5s;
+  font-family: 'Anton', sans-serif;
+  color: rgb(255, 255, 255);
+  margin-bottom: 1px;
+  animation: fadeSlideUp 1s ease forwards;
+  animation-delay: 0.5s;
   opacity: 0;
 }
 
@@ -213,21 +163,6 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 20px 30px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 25px;
-    margin-top: 15px;
-  }
-
-  .logo img {
-    height: 120px;
-  }
-
   .welcome-text {
     font-size: 36px;
   }
