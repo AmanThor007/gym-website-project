@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #fff;
+  }
+  
+  header {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .logo {
+    font-size: 30px;
+    color: yellow;
+    font-weight: bold;
+  }
+  .logo img {
+    height: 300px;
+    width: auto;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a.active, nav a:hover {
+    color: yellow;
+  }
+  
+  
+  .btn {
+    padding: 12px 24px;
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  footer {
+    background-color: #000;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+  }
+  .enquiry-section {
+    max-width: 600px;
+    margin: 100px auto;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.2);
+  }
+  
+  .enquiry-section h1 {
+    text-align: center;
+    color: yellow;
+    margin-bottom: 30px;
+  }
+  
+  .enquiry-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .enquiry-form input,
+  .enquiry-form select,
+  .enquiry-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 15px;
+    background-color: #222;
+    color: #fff;
+  }
+  
+  .enquiry-form input::placeholder,
+  .enquiry-form textarea::placeholder {
+    color: #bbb;
+  }
+  
+  .enquiry-form button {
+    width: 100%;
+    background-color: yellow;
+    color: black;
+    padding: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .enquiry-form button:hover {
+    background-color: #ffdd00;
+  }
+  

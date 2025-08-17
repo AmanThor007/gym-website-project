@@ -1,0 +1,201 @@
+/* Reset & base */
+** {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #111;
+  color: #fff;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%; /* FIXED */
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+}
+
+.logo img {
+  height: 200px; /* Adjusted for fixed header */
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+
+nav a {
+  color: #eeddddf1;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 22px;
+  text-transform: uppercase;
+  font-family: 'Anton', sans-serif;
+  padding: 10px 12px;
+  border-radius: 5px;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: yellow;
+  color: black;
+  text-shadow: 0 0 8px #ffd700;
+}
+
+/* About Section */
+.about-section {
+  padding: 200px 80px 30px; /* top padding for fixed header */
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  animation: fadeSlideUp 1s ease forwards;
+}
+
+.about-heading {
+  font-size: 35px;
+  font-style: italic;
+  font-family: 'Anton', sans-serif;
+  color: yellow;
+  margin-bottom: 1px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+}
+
+.about-content {
+  font-size: 20px;
+  font-style: oblique;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #fffffff1;
+}
+
+.about-content h2 {
+  font-size: 35px;
+  margin: 5px 0 5px;
+  color: #eecb2fe8;
+  font-family: 'Anton', sans-serif;
+}
+
+.about-content span {
+  color: rgba(250, 250, 0, 0.87);
+  letter-spacing: 2.5px;
+}
+
+.about-content ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+  margin: 0 auto 25px;
+  max-width: 600px;
+}
+
+/* About Content ul li - bada karo */
+.about-content ul li {
+  font-size: 22px;        /* font-size badhaya */
+  font-style: italic;
+  font-weight: 500;
+  margin: 1px 0;         /* thoda zyada spacing */
+  padding-left: 25px;
+  position: relative;
+}
+
+/* Bullet arrow thoda bada karo */
+.about-content ul li::before {
+  content: "➤";
+  position: absolute;
+  left: 0;
+  color: yellow;
+  font-size: 20px;        /* bada arrow */
+}
+
+
+
+
+.tagline {
+  font-style: oblique;
+  font-weight: 800;
+  font-size: 22px;
+  color: #ccc;
+  margin-top: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: #ccc;
+  text-align: center;
+  padding: 30px 30px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 20px 30px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 15px;
+  }
+
+  .logo img {
+    height: 250px;
+  }
+
+  .about-heading {
+    font-size: 42px;
+  }
+
+  .about-content {
+    font-size: 20px;
+  }
+
+  .about-content h2 {
+    font-size: 26px;
+  }
+
+  .about-content ul li {
+    font-size: 18px;
+  }
+
+  footer {
+    font-size: 18px;
+  }
+}

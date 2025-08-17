@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enquiry - Sai Jyot Fitness Club</title>
+  <link rel="stylesheet" href="enquiry.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+        <img src="logo.jpeg" alt="Logo">
+        <span>Sai Jyot Fitness Club</span>
+      </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="trainers.html">Trainers</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="enquiry.html" class="active">Enquiry</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="enquiry-section">
+    <h1>Enquiry Form</h1>
+    <form class="enquiry-form" onsubmit="sendToWhatsApp(event)">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" placeholder="Your name" required />
+
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" placeholder="Your mobile number" required />
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" placeholder="Your email" />
+
+      <label for="plan">Select Plan:</label>
+      <select id="plan">
+        <option value="Gym Only">Gym Only</option>
+        <option value="Gym + Cardio">Gym + Cardio</option>
+        <option value="Personal Training">Personal Training</option>
+      </select>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" placeholder="Write something..." rows="4"></textarea>
+
+      <button type="submit">Submit via WhatsApp</button>
+    </form>
+  </section>
+
+  <!-- ✅ JavaScript: Put this before </body> -->
+  <script>
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+  
+      const name = document.getElementById("name").value.trim();
+      const mobile = document.getElementById("mobile").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const plan = document.getElementById("plan").value;
+      const message = document.getElementById("message").value.trim();
+  
+      // ✅ Validations
+      if (!name) {
+        alert("❌ Please enter your name.");
+        return;
+      }
+  
+      if (!mobile || mobile.length < 10 || isNaN(mobile)) {
+        alert("❌ Please enter a valid 10-digit mobile number.");
+        return;
+      }
+  
+      if (email && !email.includes("@")) {
+        alert("❌ Please enter a valid email address.");
+        return;
+      }
+  
+      // ✅ Create WhatsApp message
+      const whatsappNumber = "918591231058"; // Your number without +
+      const whatsappMessage = `New Enquiry:%0A
+  Name: ${name}%0A
+  Mobile: ${mobile}%0A
+  Email: ${email}%0A
+  Selected Plan: ${plan}%0A
+  Message: ${message}`;
+  
+      const url = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  
+      // ✅ Open WhatsApp
+      window.open(url, "_blank");
+  
+      // ✅ Optional: success message
+      alert("✅ Form submitted! WhatsApp will open in a new tab.");
+  
+      // ✅ Clear the form
+      document.querySelector(".enquiry-form").reset();
+    }
+  </script>
+  
+  
+</body>
+</html>

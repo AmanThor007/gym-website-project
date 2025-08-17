@@ -1,0 +1,64 @@
+<!-- gallery.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery - Sai Jyot Fitness Club</title>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <img src="logo.jpeg" alt="Logo">
+        <span>Sai Jyot Fitness Club</span>
+      </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="trainers.html">Trainers</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="gallery-section">
+    <h1>Transformation & Gym Gallery</h1>
+    <div class="gallery-grid">
+      <!-- Replace src with your real images -->
+      <img src="transform 1.jpeg" alt="Transformation 1" onclick="openLightbox(this)" />
+      <img src="transform 2.jpeg" alt="Transformation 2" onclick="openLightbox(this)"/>
+      <img src="transform 3.jpeg" alt="Transformation 3" onclick="openLightbox(this)"/>
+      <img src="equipment.jpeg" alt="Gym Equipment " onclick="openLightbox(this)"/>
+      <img src="gym poster.jpeg" alt="Gym poster" onclick="openLightbox(this)"/>
+      <img src="cardio section.jpeg" alt="cardio section" onclick="openLightbox(this)"/>
+    </div>
+  </section>
+
+  <footer>
+    <p>📍 Dwarli Pada | 📞 8898320668</p>
+    <p>Timings: 6 AM – 12 PM | 4 PM – 10 PM</p>
+  </footer>
+ 
+  <!-- Lightbox popup overlay -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Expanded image" />
+  </div>
+  <script>
+    function openLightbox(img) {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = img.src;
+      lightbox.style.display = "flex";
+    }
+  
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
+  
+</body>
+</html>
